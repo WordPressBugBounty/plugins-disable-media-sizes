@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Disable Media Sizes\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-20 21:18+0000\n"
+"POT-Creation-Date: 2024-10-05 21:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -15,12 +15,24 @@ msgstr ""
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.4.4; wp-5.6-beta3-49538"
 
+#: inc/settings.php:238
+msgid "and"
+msgstr ""
+
+#: inc/settings.php:240
+msgid "Apply code"
+msgstr ""
+
+#: inc/settings.php:240
+msgid "at checkout. Sale ends 12/21/24."
+msgstr ""
+
 #: inc/settings.php:39
 msgid "Below you can choose which image sizes should be disabled."
 msgstr ""
 
-#: inc/settings.php:236
-msgid "Buy one get one FREE with code"
+#: inc/settings.php:239
+msgid "books"
 msgstr ""
 
 #: inc/settings.php:180
@@ -64,7 +76,7 @@ msgstr ""
 msgid "Disable Thumbnail Size"
 msgstr ""
 
-#: inc/settings.php:307
+#: inc/settings.php:309
 msgid "Dismiss"
 msgstr ""
 
@@ -72,8 +84,8 @@ msgstr ""
 msgid "Donate via PayPal, credit card, or cryptocurrency"
 msgstr ""
 
-#: inc/settings.php:238
-msgid "Get&nbsp;plugins&nbsp;&raquo;"
+#: inc/settings.php:235
+msgid "Fall Sale!"
 msgstr ""
 
 #: inc/settings.php:175
@@ -109,10 +121,6 @@ msgstr ""
 
 #: inc/settings.php:45
 msgid "More info"
-msgstr ""
-
-#: inc/settings.php:237
-msgid "or take 30% off with code"
 msgstr ""
 
 #: inc/settings.php:138
@@ -151,8 +159,8 @@ msgstr ""
 msgid "Prevent WordPress from generating thumbnail images"
 msgstr ""
 
-#: inc/settings.php:235
-msgid "Pro Plugin Sale!"
+#: inc/settings.php:237
+msgid "Pro WordPress plugins"
 msgstr ""
 
 #. Description of the plugin
@@ -181,6 +189,10 @@ msgstr ""
 
 #: inc/settings.php:90 inc/settings.php:149
 msgid "Show support with a small donation&nbsp;&raquo;"
+msgstr ""
+
+#: inc/settings.php:236
+msgid "Take 25% OFF any of our"
 msgstr ""
 
 #: inc/settings.php:116

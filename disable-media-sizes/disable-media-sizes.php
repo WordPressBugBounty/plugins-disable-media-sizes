@@ -9,9 +9,9 @@
 	Donate link: https://monzillamedia.com/donate.html
 	Contributors: specialk
 	Requires at least: 5.3
-	Tested up to: 6.6
-	Stable tag: 2.1
-	Version:    2.1
+	Tested up to: 6.7
+	Stable tag: 2.2
+	Version:    2.2
 	Requires PHP: 5.6.20
 	Text Domain: disable-media-sizes
 	Domain Path: /languages
@@ -37,7 +37,7 @@
 
 if (!defined('ABSPATH')) exit;
 
-if (!defined('DISABLE_MEDIA_SIZES_VERSION')) define('DISABLE_MEDIA_SIZES_VERSION', '2.1');
+if (!defined('DISABLE_MEDIA_SIZES_VERSION')) define('DISABLE_MEDIA_SIZES_VERSION', '2.2');
 if (!defined('DISABLE_MEDIA_SIZES_URL'))     define('DISABLE_MEDIA_SIZES_URL', plugin_dir_url(__FILE__));
 
 register_activation_hook(__FILE__, 'disable_media_sizes_dismiss_notice_activate');
