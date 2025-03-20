@@ -34,9 +34,9 @@ function disable_media_sizes_menu_page() {
 function disable_media_sizes_display_settings() { ?>
 	
 	<div class="wrap">
-		<h1><?php _e('Disable Media Sizes', 'disable-media-sizes'); ?></h1>
+		<h1><span class="fa fa-pad fa-arrows"></span> <?php _e('Disable Media Sizes', 'disable-media-sizes'); ?> <span class="disable-media-sizes-version"><?php echo DISABLE_MEDIA_SIZES_VERSION; ?></span></h1>
 		<p>
-			<?php esc_html_e('Below you can choose which image sizes should be disabled.', 'disable-media-sizes'); ?>
+			<?php esc_html_e('Thank you for using Disable Media Sizes :) Below you can choose which image sizes should be disabled.', 'disable-media-sizes'); ?>
 		</p>
 		<p>
 			<strong><a class="toggle" href="#notes"><?php esc_html_e('Click to read notes', 'disable-media-sizes'); ?></a></strong> 
@@ -86,6 +86,7 @@ function disable_media_sizes_register_settings() {
 	add_settings_field('disable-size-2048x2048',    __('Disable 2048x2048 Size', 'disable-media-sizes'), 'disable_media_sizes_callback_checkbox', 'disable_media_sizes_options', 'settings_2', array('id' => 'disable-size-2048x2048',    'label' => __('Prevent WordPress from generating 2048x2048 images',            'disable-media-sizes')));
 	add_settings_field('disable-size-big',          __('Disable "Big" Size',     'disable-media-sizes'), 'disable_media_sizes_callback_checkbox', 'disable_media_sizes_options', 'settings_2', array('id' => 'disable-size-big',          'label' => __('Prevent WordPress from generating "big" (scaled) size images',  'disable-media-sizes')));
 	
+	add_settings_field('reset_options',             __('Reset Options',          'disable-media-sizes'), 'disable_media_sizes_callback_reset',    'disable_media_sizes_options', 'settings_2', array('id' => 'reset_options',             'label' => __('Restore default plugin options',                                'disable-media-sizes')));
 	add_settings_field('rate_plugin',               __('Rate Plugin',            'disable-media-sizes'), 'disable_media_sizes_callback_rate',     'disable_media_sizes_options', 'settings_2', array('id' => 'rate_plugin',               'label' => __('Show support with a 5-star rating &raquo;',                     'disable-media-sizes')));
 	add_settings_field('show_support',              __('Show Support',           'disable-media-sizes'), 'disable_media_sizes_callback_support',  'disable_media_sizes_options', 'settings_2', array('id' => 'show_support',              'label' => __('Show support with a small donation&nbsp;&raquo;',               'disable-media-sizes')));
 	
@@ -107,7 +108,7 @@ function disable_media_sizes_validate_options($input) {
 
 function disable_media_sizes_settings_section_1() {
 	
-	echo '<p>'. esc_html__('These sizes are set under WP Menu &gt; Settings &gt; Media &gt; Image sizes.', 'disable-media-sizes') .'</p>';
+	echo '<p>'. esc_html__('These sizes are set under WP Menu &#9656; Settings &#9656; Media &#9656; Image sizes.', 'disable-media-sizes') .'</p>';
 	
 }
 
@@ -149,6 +150,18 @@ function disable_media_sizes_callback_support($args) {
 	$text  = isset($args['label']) ? $args['label'] : esc_html__('Show support with a small donation&nbsp;&raquo;', 'disable-media-sizes');
 	
 	echo '<a target="_blank" rel="noopener noreferrer" class="disable-media-sizes-show-support" href="'. $href .'" title="'. $title .'">'. $text .'</a>';
+	
+}
+
+function disable_media_sizes_callback_reset($args) {
+	
+	$nonce = wp_create_nonce('disable-media-sizes-reset-options');
+	
+	$href  = add_query_arg(array('disable-media-sizes-reset-options' => $nonce), admin_url('options-general.php?page=disable-media-sizes'));
+	
+	$label = isset($args['label']) ? $args['label'] : esc_html__('Restore default plugin options', 'disable-media-sizes');
+	
+	echo '<a class="disable-media-sizes-reset-options" href="'. esc_url($href) .'">'. esc_html($label) .'</a>';
 	
 }
 
@@ -230,14 +243,14 @@ function disable_media_sizes_admin_notice() {
 			
 			?>
 			
-			<div class="notice notice-success notice-margin">
+			<div class="notice notice-success notice-margin notice-custom">
 				<p>
-					<strong><?php esc_html_e('Fall Sale!', 'disable-media-sizes'); ?></strong> 
-					<?php esc_html_e('Take 25% OFF any of our', 'disable-media-sizes'); ?> 
+					<strong><?php esc_html_e('Spring Sale!', 'disable-media-sizes'); ?></strong> 
+					<?php esc_html_e('Take 30% OFF any of our', 'disable-media-sizes'); ?> 
 					<a target="_blank" rel="noopener noreferrer" href="https://plugin-planet.com/"><?php esc_html_e('Pro WordPress plugins', 'disable-media-sizes'); ?></a> 
 					<?php esc_html_e('and', 'disable-media-sizes'); ?> 
 					<a target="_blank" rel="noopener noreferrer" href="https://books.perishablepress.com/"><?php esc_html_e('books', 'disable-media-sizes'); ?></a>. 
-					<?php esc_html_e('Apply code', 'disable-media-sizes'); ?> <code>FALL2024</code> <?php esc_html_e('at checkout. Sale ends 12/21/24.', 'disable-media-sizes'); ?> 
+					<?php esc_html_e('Apply code', 'disable-media-sizes'); ?> <code>SPRING2025</code> <?php esc_html_e('at checkout. Sale ends 6/25/2025.', 'disable-media-sizes'); ?> 
 					<?php echo disable_media_sizes_dismiss_notice_link(); ?>
 				</p>
 			</div>
@@ -314,7 +327,7 @@ function disable_media_sizes_dismiss_notice_link() {
 
 function disable_media_sizes_check_date_expired() {
 	
-	$expires = apply_filters('disable_media_sizes_check_date_expired', '2024-12-21');
+	$expires = apply_filters('disable_media_sizes_check_date_expired', '2025-06-25');
 	
 	return (new DateTime() > new DateTime($expires)) ? true : false;
 	
@@ -330,7 +343,57 @@ function disable_media_sizes_enqueue_resources_admin() {
 	
 	if ($screen_id === 'settings_page_disable-media-sizes') {
 		
+		wp_enqueue_style('wp-jquery-ui-dialog');
+		
 		wp_enqueue_style('disable-media-sizes', DISABLE_MEDIA_SIZES_URL .'css/settings.css', array(), DISABLE_MEDIA_SIZES_VERSION);
+		
+		wp_enqueue_style('disable-media-sizes-fonts', DISABLE_MEDIA_SIZES_URL .'css/font-icons.css', array(), DISABLE_MEDIA_SIZES_VERSION);
+		
+		wp_enqueue_script('disable-media-sizes', DISABLE_MEDIA_SIZES_URL .'js/settings.js', array('jquery', 'jquery-ui-core', 'jquery-ui-dialog'), DISABLE_MEDIA_SIZES_VERSION);
+		
+	}
+	
+}
+
+function disable_media_sizes_admin_print_scripts() {
+	
+	$screen_id = disable_media_sizes_get_current_screen_id();
+	
+	if (!$screen_id) return;
+	
+	if ($screen_id === 'settings_page_disable-media-sizes') : 
+	
+	?>
+	
+	<script>
+		var 
+		disable_media_sizes_reset_title   = '<?php _e('Confirm Reset',            'disable-media-sizes'); ?>',
+		disable_media_sizes_reset_message = '<?php _e('Restore default options?', 'disable-media-sizes'); ?>',
+		disable_media_sizes_reset_true    = '<?php _e('Yes, make it so.',         'disable-media-sizes'); ?>',
+		disable_media_sizes_reset_false   = '<?php _e('No, abort mission.',       'disable-media-sizes'); ?>';
+	</script>
+	
+	<?php endif;
+	
+}
+
+//
+
+function disable_media_sizes_reset_options() {
+	
+	if (isset($_GET['disable-media-sizes-reset-options']) && wp_verify_nonce($_GET['disable-media-sizes-reset-options'], 'disable-media-sizes-reset-options')) {
+		
+		if (!current_user_can('manage_options')) exit;
+		
+		$update = delete_option('disable_media_sizes_options');
+		
+		$result = $update ? 'true' : 'false';
+		
+		$location = add_query_arg(array('disable-media-sizes-reset-options' => $result), admin_url('options-general.php?page=disable-media-sizes'));
+		
+		wp_redirect($location);
+		
+		exit;
 		
 	}
 	

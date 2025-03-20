@@ -9,9 +9,9 @@
 	Donate link: https://monzillamedia.com/donate.html
 	Contributors: specialk
 	Requires at least: 5.3
-	Tested up to: 6.7
-	Stable tag: 2.2
-	Version:    2.2
+	Tested up to: 6.8
+	Stable tag: 2.3
+	Version:    2.3
 	Requires PHP: 5.6.20
 	Text Domain: disable-media-sizes
 	Domain Path: /languages
@@ -32,12 +32,12 @@
 	You should have received a copy of the GNU General Public License
 	with this program. If not, visit: https://www.gnu.org/licenses/
 	
-	Copyright 2024 Monzilla Media. All rights reserved.
+	Copyright 2025 Monzilla Media. All rights reserved.
 */
 
 if (!defined('ABSPATH')) exit;
 
-if (!defined('DISABLE_MEDIA_SIZES_VERSION')) define('DISABLE_MEDIA_SIZES_VERSION', '2.2');
+if (!defined('DISABLE_MEDIA_SIZES_VERSION')) define('DISABLE_MEDIA_SIZES_VERSION', '2.3');
 if (!defined('DISABLE_MEDIA_SIZES_URL'))     define('DISABLE_MEDIA_SIZES_URL', plugin_dir_url(__FILE__));
 
 register_activation_hook(__FILE__, 'disable_media_sizes_dismiss_notice_activate');
@@ -49,6 +49,7 @@ add_action('admin_menu',    'disable_media_sizes_menu_page');
 add_action('admin_init',    'disable_media_sizes_register_settings');
 add_action('admin_init',    'disable_media_sizes_dismiss_notice_save');
 add_action('admin_init',    'disable_media_sizes_dismiss_notice_version');
+add_action('admin_init',    'disable_media_sizes_reset_options');
 add_action('admin_notices', 'disable_media_sizes_admin_notice');
 
 add_action('intermediate_image_sizes_advanced', 'disable_media_sizes_intermediate_image_sizes');
@@ -57,4 +58,5 @@ add_filter('big_image_size_threshold', 'disable_media_sizes_big_image_size');
 add_filter('plugin_action_links',   'disable_media_sizes_plugin_action_links', 10, 2);
 add_filter('plugin_row_meta',       'disable_media_sizes_plugin_row_meta',     10, 2);
 add_filter('admin_footer_text',     'disable_media_sizes_admin_footer_text',   10, 1);
+add_action('admin_print_scripts',   'disable_media_sizes_admin_print_scripts');
 add_action('admin_enqueue_scripts', 'disable_media_sizes_enqueue_resources_admin');

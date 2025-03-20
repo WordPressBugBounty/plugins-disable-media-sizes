@@ -2,6 +2,10 @@
 
 .wp-admin .notice code { line-height: 1; font-size: 12px; }
 .wp-admin .disable-media-sizes-dismiss-notice { float: right; }
+.wp-admin .disable-media-sizes-version { color: #c7c7c7; font-size: 90%; }
+
+.wp-admin .wrap form h2 { position: relative; padding: 0 0 0 24px; }
+.wp-admin .wrap form h2::before { position: absolute; top: 0; left: 0; font-family: FontAwesome; content: "\f138"; }
 
 .wp-admin .notice-margin p { margin: 10px 0; }
 
