@@ -36,9 +36,9 @@ function disable_media_sizes_display_settings() { ?>
 	<div class="wrap">
 		<h1><span class="fa fa-pad fa-arrows"></span> <?php _e('Disable Media Sizes', 'disable-media-sizes'); ?> <span class="disable-media-sizes-version"><?php echo DISABLE_MEDIA_SIZES_VERSION; ?></span></h1>
 		<p>
-			<?php esc_html_e('Thank you for using Disable Media Sizes :) Below you can choose which image sizes should be disabled.', 'disable-media-sizes'); ?>
+			<strong><?php esc_html_e('Thank you', 'disable-media-sizes'); ?></strong> <?php esc_html_e('for using Disable Media Sizes :) Below you can choose which image sizes should be disabled.', 'disable-media-sizes'); ?>
 		</p>
-		<p>
+		<p class="notes-wrap">
 			<strong><a class="toggle" href="#notes"><?php esc_html_e('Click to read notes', 'disable-media-sizes'); ?></a></strong> 
 			<span class="notes">
 				<?php esc_html_e('If all image sizes below are disabled, only original images will be uploaded. It is recommended to enable at least one smaller size image, so WordPress can use it for thumbnails in the Admin Area.', 'disable-media-sizes'); ?> 
@@ -243,14 +243,14 @@ function disable_media_sizes_admin_notice() {
 			
 			?>
 			
-			<div class="notice notice-success notice-margin notice-custom">
+			<div class="notice notice-success notice-lh">
 				<p>
-					<strong><?php esc_html_e('Spring Sale!', 'disable-media-sizes'); ?></strong> 
-					<?php esc_html_e('Take 30% OFF any of our', 'disable-media-sizes'); ?> 
+					<strong><?php esc_html_e('❄️ Winter Sale!', 'disable-media-sizes'); ?></strong> 
+					<?php esc_html_e('Take 20% OFF any of our', 'disable-media-sizes'); ?> 
 					<a target="_blank" rel="noopener noreferrer" href="https://plugin-planet.com/"><?php esc_html_e('Pro WordPress plugins', 'disable-media-sizes'); ?></a> 
 					<?php esc_html_e('and', 'disable-media-sizes'); ?> 
 					<a target="_blank" rel="noopener noreferrer" href="https://books.perishablepress.com/"><?php esc_html_e('books', 'disable-media-sizes'); ?></a>. 
-					<?php esc_html_e('Apply code', 'disable-media-sizes'); ?> <code>SPRING2025</code> <?php esc_html_e('at checkout. Sale ends 6/25/2025.', 'disable-media-sizes'); ?> 
+					<?php esc_html_e('Apply code', 'disable-media-sizes'); ?> <code>WINTER20</code> <?php esc_html_e('at checkout. Sale ends 3/28/2026.', 'disable-media-sizes'); ?> 
 					<?php echo disable_media_sizes_dismiss_notice_link(); ?>
 				</p>
 			</div>
@@ -327,7 +327,7 @@ function disable_media_sizes_dismiss_notice_link() {
 
 function disable_media_sizes_check_date_expired() {
 	
-	$expires = apply_filters('disable_media_sizes_check_date_expired', '2025-06-25');
+	$expires = apply_filters('disable_media_sizes_check_date_expired', '2026-03-28');
 	
 	return (new DateTime() > new DateTime($expires)) ? true : false;
 	

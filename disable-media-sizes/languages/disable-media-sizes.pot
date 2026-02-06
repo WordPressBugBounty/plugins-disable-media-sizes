@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Disable Media Sizes\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-19 18:13+0000\n"
+"POT-Creation-Date: 2026-01-28 23:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -24,7 +24,7 @@ msgid "Apply code"
 msgstr ""
 
 #: inc/settings.php:253
-msgid "at checkout. Sale ends 6/25/2025."
+msgid "at checkout. Sale ends 3/28/2026."
 msgstr ""
 
 #: inc/settings.php:252
@@ -82,6 +82,12 @@ msgstr ""
 
 #: inc/settings.php:149
 msgid "Donate via PayPal, credit card, or cryptocurrency"
+msgstr ""
+
+#: inc/settings.php:39
+msgid ""
+"for using Disable Media Sizes :) Below you can choose which image sizes "
+"should be disabled."
 msgstr ""
 
 #: inc/settings.php:188
@@ -203,18 +209,12 @@ msgstr ""
 msgid "Show support with a small donation&nbsp;&raquo;"
 msgstr ""
 
-#: inc/settings.php:248
-msgid "Spring Sale!"
-msgstr ""
-
 #: inc/settings.php:249
-msgid "Take 30% OFF any of our"
+msgid "Take 20% OFF any of our"
 msgstr ""
 
 #: inc/settings.php:39
-msgid ""
-"Thank you for using Disable Media Sizes :) Below you can choose which image "
-"sizes should be disabled."
+msgid "Thank you"
 msgstr ""
 
 #: inc/settings.php:117
@@ -235,4 +235,8 @@ msgstr ""
 
 #: inc/settings.php:216
 msgid "★★★★★ rating&nbsp;&raquo;"
+msgstr ""
+
+#: inc/settings.php:248
+msgid "❄️ Winter Sale!"
 msgstr ""

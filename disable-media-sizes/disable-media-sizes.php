@@ -9,9 +9,9 @@
 	Donate link: https://monzillamedia.com/donate.html
 	Contributors: specialk
 	Requires at least: 5.3
-	Tested up to: 6.8
-	Stable tag: 2.3
-	Version:    2.3
+	Tested up to: 6.9
+	Stable tag: 2.5
+	Version:    2.5
 	Requires PHP: 5.6.20
 	Text Domain: disable-media-sizes
 	Domain Path: /languages
@@ -32,12 +32,12 @@
 	You should have received a copy of the GNU General Public License
 	with this program. If not, visit: https://www.gnu.org/licenses/
 	
-	Copyright 2025 Monzilla Media. All rights reserved.
+	Copyright 2020-2026 Monzilla Media. All rights reserved.
 */
 
 if (!defined('ABSPATH')) exit;
 
-if (!defined('DISABLE_MEDIA_SIZES_VERSION')) define('DISABLE_MEDIA_SIZES_VERSION', '2.3');
+if (!defined('DISABLE_MEDIA_SIZES_VERSION')) define('DISABLE_MEDIA_SIZES_VERSION', '2.5');
 if (!defined('DISABLE_MEDIA_SIZES_URL'))     define('DISABLE_MEDIA_SIZES_URL', plugin_dir_url(__FILE__));
 
 register_activation_hook(__FILE__, 'disable_media_sizes_dismiss_notice_activate');
