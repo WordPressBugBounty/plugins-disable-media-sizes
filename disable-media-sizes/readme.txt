@@ -9,9 +9,9 @@ Author URI: https://plugin-planet.com/
 Donate link: https://monzillamedia.com/donate.html
 Contributors: specialk
 Requires at least: 5.3
-Tested up to: 6.9
-Stable tag: 2.5
-Version:    2.5
+Tested up to: 7.0
+Stable tag: 2.5.1
+Version:    2.5.1
 Requires PHP: 5.6.20
 Text Domain: disable-media-sizes
 Domain Path: /languages
@@ -92,6 +92,7 @@ And/or purchase one of my premium WordPress plugins:
 * [Banhammer Pro](https://plugin-planet.com/banhammer-pro/) - Monitor traffic and ban the bad guys
 * [GA Google Analytics Pro](https://plugin-planet.com/ga-google-analytics-pro/) - Connect WordPress to Google Analytics
 * [Head Meta Pro](https://plugin-planet.com/head-meta-pro/) - Ultimate Meta Tags for WordPress
+* [REST Pro Tools](https://plugin-planet.com/rest-pro-tools/) - Awesome tools for managing the WP REST API
 * [Simple Ajax Chat Pro](https://plugin-planet.com/simple-ajax-chat-pro/) - Unlimited chat rooms
 * [USP Pro](https://plugin-planet.com/usp-pro/) - Unlimited front-end forms
 
@@ -151,13 +152,11 @@ Send any questions or feedback via my [contact form](https://plugin-planet.com/s
 If you like Disable Media Sizes, please take a moment to [give a 5-star rating](https://wordpress.org/support/plugin/disable-media-sizes/reviews/?rate=5#new-post). It helps to keep the plugin going strong, and is greatly appreciated.
 
 
-**2.5 (2026/01/28)**
+**2.5.1 (2026/04/17)**
 
+* Fixes bug with reset options
 * Updates plugin settings page
-* Improves readme.txt documentation
-* Generates new language template
-* Tests on PHP 8.4 and 8.5
-* Tests on WordPress 6.9
+* Tests on WordPress 7.0
 
 
 Full changelog @ [https://plugin-planet.com/wp/changelog/disable-media-sizes.txt](https://plugin-planet.com/wp/changelog/disable-media-sizes.txt)

@@ -190,7 +190,7 @@ function disable_media_sizes_plugin_row_meta($links, $file) {
 		$links[] = '<a target="_blank" rel="noopener noreferrer" href="'. $home_href .'" title="'. $home_title .'">'. $home_text .'</a>';
 		
 		$rate_href  = 'https://wordpress.org/support/plugin/disable-media-sizes/reviews/?rate=5#new-post';
-		$rate_title = esc_attr__('Click here to rate and review this plugin on WordPress.org', 'disable-media-sizes');
+		$rate_title = esc_attr__('Click here to rate and review this plugin at WordPress.org', 'disable-media-sizes');
 		$rate_text  = esc_html__('Rate this plugin', 'disable-media-sizes') .'&nbsp;&raquo;';
 		
 		$links[] = '<a target="_blank" rel="noopener noreferrer" href="'. $rate_href .'" title="'. $rate_title .'">'. $rate_text .'</a>';
@@ -245,12 +245,12 @@ function disable_media_sizes_admin_notice() {
 			
 			<div class="notice notice-success notice-lh">
 				<p>
-					<strong><?php esc_html_e('❄️ Winter Sale!', 'disable-media-sizes'); ?></strong> 
-					<?php esc_html_e('Take 20% OFF any of our', 'disable-media-sizes'); ?> 
+					<strong><?php esc_html_e('🌼 Spring Sale!', 'disable-media-sizes'); ?></strong> 
+					<?php esc_html_e('Take 30% OFF any of our', 'disable-media-sizes'); ?> 
 					<a target="_blank" rel="noopener noreferrer" href="https://plugin-planet.com/"><?php esc_html_e('Pro WordPress plugins', 'disable-media-sizes'); ?></a> 
 					<?php esc_html_e('and', 'disable-media-sizes'); ?> 
 					<a target="_blank" rel="noopener noreferrer" href="https://books.perishablepress.com/"><?php esc_html_e('books', 'disable-media-sizes'); ?></a>. 
-					<?php esc_html_e('Apply code', 'disable-media-sizes'); ?> <code>WINTER20</code> <?php esc_html_e('at checkout. Sale ends 3/28/2026.', 'disable-media-sizes'); ?> 
+					<?php esc_html_e('Apply code', 'disable-media-sizes'); ?> <code>SPRING30</code> <?php esc_html_e('at checkout. Sale ends 6/28/2026.', 'disable-media-sizes'); ?> 
 					<?php echo disable_media_sizes_dismiss_notice_link(); ?>
 				</p>
 			</div>
@@ -327,7 +327,7 @@ function disable_media_sizes_dismiss_notice_link() {
 
 function disable_media_sizes_check_date_expired() {
 	
-	$expires = apply_filters('disable_media_sizes_check_date_expired', '2026-03-28');
+	$expires = apply_filters('disable_media_sizes_check_date_expired', '2026-06-28');
 	
 	return (new DateTime() > new DateTime($expires)) ? true : false;
 	
@@ -385,9 +385,11 @@ function disable_media_sizes_reset_options() {
 		
 		if (!current_user_can('manage_options')) exit;
 		
+		$dismiss = delete_option('disable-media-sizes-dismiss-notice');
+		
 		$update = delete_option('disable_media_sizes_options');
 		
-		$result = $update ? 'true' : 'false';
+		$result = ($dismiss || $update) ? 'true' : 'false';
 		
 		$location = add_query_arg(array('disable-media-sizes-reset-options' => $result), admin_url('options-general.php?page=disable-media-sizes'));
 		
