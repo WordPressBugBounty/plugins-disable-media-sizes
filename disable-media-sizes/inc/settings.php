@@ -245,12 +245,12 @@ function disable_media_sizes_admin_notice() {
 			
 			<div class="notice notice-success notice-lh">
 				<p>
-					<strong><?php esc_html_e('🌼 Spring Sale!', 'disable-media-sizes'); ?></strong> 
-					<?php esc_html_e('Take 30% OFF any of our', 'disable-media-sizes'); ?> 
+					<strong><?php esc_html_e('☀️ Summer Sale!', 'disable-media-sizes'); ?></strong> 
+					<?php esc_html_e('Take 35% OFF any of our', 'disable-media-sizes'); ?> 
 					<a target="_blank" rel="noopener noreferrer" href="https://plugin-planet.com/"><?php esc_html_e('Pro WordPress plugins', 'disable-media-sizes'); ?></a> 
 					<?php esc_html_e('and', 'disable-media-sizes'); ?> 
 					<a target="_blank" rel="noopener noreferrer" href="https://books.perishablepress.com/"><?php esc_html_e('books', 'disable-media-sizes'); ?></a>. 
-					<?php esc_html_e('Apply code', 'disable-media-sizes'); ?> <code>SPRING30</code> <?php esc_html_e('at checkout. Sale ends 6/28/2026.', 'disable-media-sizes'); ?> 
+					<?php esc_html_e('Apply code', 'disable-media-sizes'); ?> <code>SUMMER</code> <?php esc_html_e('at checkout. Sale ends 9/20/2026.', 'disable-media-sizes'); ?> 
 					<?php echo disable_media_sizes_dismiss_notice_link(); ?>
 				</p>
 			</div>
@@ -327,7 +327,7 @@ function disable_media_sizes_dismiss_notice_link() {
 
 function disable_media_sizes_check_date_expired() {
 	
-	$expires = apply_filters('disable_media_sizes_check_date_expired', '2026-06-28');
+	$expires = apply_filters('disable_media_sizes_check_date_expired', '2026-09-20');
 	
 	return (new DateTime() > new DateTime($expires)) ? true : false;
 	

@@ -9,9 +9,9 @@ Author URI: https://plugin-planet.com/
 Donate link: https://monzillamedia.com/donate.html
 Contributors: specialk
 Requires at least: 5.3
-Tested up to: 7.0
-Stable tag: 2.5.1
-Version:    2.5.1
+Tested up to: 7.1
+Stable tag: 2.6
+Version:    2.6
 Requires PHP: 5.6.20
 Text Domain: disable-media-sizes
 Domain Path: /languages
@@ -150,6 +150,12 @@ Send any questions or feedback via my [contact form](https://plugin-planet.com/s
 == Changelog ==
 
 If you like Disable Media Sizes, please take a moment to [give a 5-star rating](https://wordpress.org/support/plugin/disable-media-sizes/reviews/?rate=5#new-post). It helps to keep the plugin going strong, and is greatly appreciated.
+
+
+**2.6 (2026/07/18)**
+
+* Updates plugin settings page
+* Tests on WordPress 7.1
 
 
 **2.5.1 (2026/04/17)**
